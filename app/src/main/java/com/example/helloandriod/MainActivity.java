@@ -34,14 +34,5 @@ public static final String TAG = "MainActivity";
             }
         });
 
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Log.i(TAG, "Button click!");
-            }
-        });
     }
 }
