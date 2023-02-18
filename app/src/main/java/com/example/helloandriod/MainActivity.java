@@ -2,6 +2,7 @@ package com.example.helloandriod;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +29,8 @@ public static final String TAG = "MainActivity";
                     public void onClick(View v)
             {
                 Log.i(TAG, "Button click!");
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
 
