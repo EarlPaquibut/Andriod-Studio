@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#808080"
@@ -12,14 +12,19 @@
         android:layout_height="wrap_content"
         android:hint="To" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject" />
 
     <EditText
+        android:id="@+id/subject"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:hint="Subject"
+        android:paddingTop="55dp"
+        android:paddingBottom="30dp" />
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="1000dp"
+        android:paddingBottom="100dp"
         android:layout_weight="1"
         android:gravity="top"
         android:hint="Message" />
@@ -30,5 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:backgroundTint="#1b1b1b"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentBottom = "true"
         android:text="Send" />
-</LinearLayout>
+</RelativeLayout>
