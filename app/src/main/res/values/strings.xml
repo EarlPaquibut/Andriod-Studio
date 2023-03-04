@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Hello Andriod</string>
+    <string-array name="array_technology">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
 </resources>
