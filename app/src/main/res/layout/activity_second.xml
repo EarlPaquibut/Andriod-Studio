@@ -30,7 +30,7 @@
         android:hint="Message" />
 
     <Button
-        android:id="@+id/donebutton"
+        android:id="@+id/button"
         android:layout_width="112dp"
         android:layout_height="wrap_content"
 
