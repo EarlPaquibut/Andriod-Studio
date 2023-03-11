@@ -12,6 +12,12 @@
         android:theme="@style/Theme.HelloAndriod"
         tools:targetApi="31">
         <activity
+            android:name=".PizzaMenuFragment"
+            android:exported="false" />
+        <activity
+            android:name=".PizzaDetailFragment"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
