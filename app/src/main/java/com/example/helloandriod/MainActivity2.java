@@ -1,7 +1,6 @@
 package com.example.helloandriod;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
