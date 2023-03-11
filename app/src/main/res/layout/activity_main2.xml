@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <Button
+        <Button
         android:id="@+id/firstfragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,11 +31,13 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="324dp"
-        android:layout_height="482dp"
+        android:layout_width="376dp"
+        android:layout_height="548dp"
         android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstfragment"
-        app:layout_constraintVertical_bias="0.438"
-        tools:layout_editor_absoluteX="42dp"></FrameLayout>
+        app:layout_constraintVertical_bias="0.683"></FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
