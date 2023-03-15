@@ -1,26 +1,49 @@
 package com.example.helloandriod.fragments;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
+import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
-import android.os.Bundle;
-
+import com.example.helloandriod.data.Pizza;
 import com.example.helloandriod.R;
 
-public class PizzaDetailFragment extends AppCompatActivity {
+public class PizzaDetailFragment extends Fragment {
+    int position = 0;
+    TextView tvTitle;
+    TextView tvDetails;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pizza_detail_fragment);
+
+        if(savedInstanceState == null){
+            if(getArguments() != null) {
+                position = getArguments().getInt("position", 0);
+            }
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.activity_pizza_detail_fragment, parent, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        tvTitle = (TextView) view.findViewById(R.id.tvTitle);
+        tvDetails = (TextView) view.findViewById(R.id.tvDetails);
+
+        tvTitle.setText(Pizza.pizzaMenu[position]);
+        tvDetails.setText(Pizza.PizzaDetails[position]);
+    }
+
+    public void updateView(int position){
+        tvTitle.setText(Pizza.pizzaMenu[position]);
+        tvDetails.setText(Pizza.PizzaDetails[position]);
     }
 }
