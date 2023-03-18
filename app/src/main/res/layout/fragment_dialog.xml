@@ -12,14 +12,13 @@
         android:background="#1D90EC"
         android:text="@string/hello_blank_fragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is a Dialog Fragment"
-        android:textSize="40dp"
-        android:gravity="center"
-        android:textStyle="bold"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="This is a Dialog Fragment"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
