@@ -1,38 +1,74 @@
 package com.example.helloandriod;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+
 
 public class MainActivity extends AppCompatActivity {
-public static final String TAG = "MainActivity";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.v(TAG,"This is a Verbose log");
-        Log.d(TAG,"This is a Debug log");
-        Log.i(TAG,"This is an Info log");
-        Log.w(TAG,"This is a Warn log");
-        Log.e(TAG,"This is an error log");
+        ActionBar actionbar = getSupportActionBar();
 
+        actionbar.setTitle("GfG | Action Bar");
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener()
+        actionbar.setSubtitle("Design a custom Action Bar");
+
+        actionbar.setIcon(R.mipmap.ic_launcher);
+
+        actionbar.setDisplayUseLogoEnabled(true);
+        actionbar.setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch(item.getItemId())
         {
+            case R.id.search:
+                showAlertDialog();
+                break;
+            case R.id.refresh:
+                DialogFragment dialogFragment = new DialogFragment();
+                dialogFragment.show(getSupportFragmentManager(),"My Fragment");
+                break;
+            case R.id.copy:
+                Toast.makeText(this, "Copy Clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alert!")
+                .setMessage("Danger your are failing!");
+        builder.setPositiveButton("I know", new DialogInterface.OnClickListener() {
             @Override
-                    public void onClick(View v)
-            {
-                Log.i(TAG, "Button click!");
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+            public void onClick(DialogInterface dialog, int id) {
+
             }
         });
 
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
