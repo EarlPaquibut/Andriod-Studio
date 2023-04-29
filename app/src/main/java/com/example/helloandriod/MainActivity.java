@@ -45,7 +45,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity",String.valueOf(age));
         Log.d("MainActivity",String.valueOf(isStudent));
 
+        editor.clear();
+        editor.commit();
 
+        name = prefs.getString("name", "");
+        age = prefs.getInt("age",0);
+        isStudent = prefs.getBoolean("is_student", false);
+        Log.d("MainActivity",name);
+        Log.d("MainActivity",String.valueOf(age));
+        Log.d("MainActivity",String.valueOf(isStudent));
     }
     @SuppressLint("Range")
         private void getData()
