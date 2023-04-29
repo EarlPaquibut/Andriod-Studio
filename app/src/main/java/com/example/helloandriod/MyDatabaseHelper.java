@@ -21,8 +21,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_AGE = "age";
 
     private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" +
-            COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
-            COLUMN_NAME + "TEXT," +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_NAME + "TEXT, " +
             COLUMN_AGE + "INTEGER);";
 
 
@@ -72,7 +72,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public int deleteData(long id, String name, int age)
+    public int deleteData(long id)
     {
         SQLiteDatabase db = getWritableDatabase();
         String selection = COLUMN_ID + " = ?";
