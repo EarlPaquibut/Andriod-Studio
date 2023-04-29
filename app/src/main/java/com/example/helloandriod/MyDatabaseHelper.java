@@ -22,8 +22,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            COLUMN_NAME + "TEXT, " +
-            COLUMN_AGE + "INTEGER);";
+            COLUMN_NAME + " TEXT, " +
+            COLUMN_AGE + " INTEGER);";
 
 
     public MyDatabaseHelper(Context context) {
